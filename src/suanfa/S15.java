@@ -17,7 +17,7 @@ import java.util.List;
 public class S15 {
     public static void main(String[] args) {
         SolutionS15 solutionS15 = new SolutionS15();
-        int[] nums = new int[]{0,0,0,0};
+        int[] nums = new int[]{-1,0,1,2,-1,-4};
         System.out.println(solutionS15.threeSum(nums));
 
     }
@@ -28,6 +28,8 @@ public class S15 {
  *
  * 注意：答案中不可以包含重复的三元组。
  *
+ * 采用指针方式
+ * i为第一个指针， L>= i+1 R = len && R > L
  *
  *
  * 来源：力扣（LeetCode）
@@ -43,29 +45,36 @@ class SolutionS15 {
 
         int length = nums.length;
 
-        for (Integer i = 0; i < length; i++) {
-            if (objects1.contains(i)) {
-                continue;
-            }
-            for (Integer j = i + 1; j < length; j++) {
-                if (objects1.contains(j)) {
-                    continue;
-                }
-                for (Integer x = length - 1; x > j; x--) {
-                    if (objects1.contains(x)) {
-                        continue;
-                    }
-                    if (nums[i] + nums[j] + nums[x] == 0) {
-                        List<Integer> integers = Arrays.asList(nums[i], nums[j], nums[x]);
-                        objects.add(integers);
-                        objects1.add(i);
-                        objects1.add(j);
-                        objects1.add(x);
-                        break;
-                    }
+        for (int i = 0; i < length; i++) {
+            if (nums[i] > 0) {  break;}
+
+            // 当L，R 确定， i 的值也是定值，所以不能重复
+            if (i > 0 && nums[i] == nums[i - 1]) {continue;}
+
+            int L = i + 1;
+            int R = length - 1;
+
+            while (L < R) {
+                int sum = nums[i] + nums[L] + nums[R];
+
+                if (sum == 0) {
+                    objects.add(Arrays.asList(nums[i], nums[L], nums[R]));
+
+                    // 当i，R 确定， L 的值也是定值，所以不能重复
+                    while (L < R && nums[L] == nums[L+1]) {L++;}
+
+                    // 当L，i 确定， R 的值也是定值，所以不能重复
+                    while (L<R && nums[R] == nums[R-1]) {R--;}
+                    L++;
+                    R--;
+                } else if (sum < 0) {
+                    L++;
+                } else if (sum > 0) {
+                    R--;
                 }
             }
         }
+
         return objects;
     }
 }
