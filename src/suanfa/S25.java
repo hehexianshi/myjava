@@ -11,8 +11,13 @@ package suanfa;
  * @changeRecord
  */
 public class S25 {
+    /**
+     * 按照k个节点 反转连表
+     * @param args
+     */
 
     public static void main(String[] args) {
+
         S25 s25 = new S25();
         s25.test();
     }
@@ -55,6 +60,10 @@ public class S25 {
             }
 
             ListNode newHead = reverse(head, tail);
+
+            /**
+             *  1, 2, 3, 4 反转之后 是 4，3，2，1 head = 1, head.next 继续拼接 新反转 的数据
+             */
             head.next = reverseKGroup(tail, k);
             return newHead;
         }
