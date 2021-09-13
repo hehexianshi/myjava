@@ -1,6 +1,5 @@
 package jichu;
 
-import suanfa.BinarySearch;
 
 /**
  * @author 李冬

@@ -16,10 +16,16 @@ import java.util.List;
  */
 public class S18 {
     public static void main(String[] args) {
-        SolutionS18 solutionS18 = new SolutionS18();
+        S18 solutionS18 = new S18();
         int[] nums = new int[]{1, 0, -1, 0, -2, 2};
         System.out.println(solutionS18.fourSum(nums, 0));
 
+    }
+
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        List<List<Integer>> ant = new ArrayList<>();
+        Arrays.sort(nums);
+        return null;
     }
 }
 
@@ -47,11 +53,3 @@ public class S18 {
  * 链接：https://leetcode-cn.com/problems/4sum
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-
-class SolutionS18 {
-    public List<List<Integer>> fourSum(int[] nums, int target) {
-        List<List<Integer>> ant = new ArrayList<>();
-        Arrays.sort(nums);
-        return null;
-    }
-}

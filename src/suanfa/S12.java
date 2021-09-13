@@ -12,9 +12,27 @@ package suanfa;
  */
 public class S12 {
     public static void main(String[] args) {
-        SolutionS12 solutionS12 = new SolutionS12();
+        S12 solutionS12 = new S12();
         int num = 1994;
         System.out.println(solutionS12.intToRoman(num));
+
+    }
+
+    int[] number = {1000,900,500,400,100,90,50,40,10,9,5,4,1} ;
+    String[] s = {"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"} ;
+
+    public String intToRoman(int num) {
+        String t = "";
+        for(int i = 0 ; i < number.length ; i++){
+            while(num >= number[i]){
+                t += s[i] ;
+                num -= number[i] ;
+            }
+            if(num == 0){
+                break ;
+            }
+        }
+        return t;
 
     }
 }
@@ -43,25 +61,4 @@ public class S12 {
  * 链接：https://leetcode-cn.com/problems/integer-to-roman
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-
-class SolutionS12 {
-
-    int[] number = {1000,900,500,400,100,90,50,40,10,9,5,4,1} ;
-    String[] s = {"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"} ;
-
-    public String intToRoman(int num) {
-        String t = "";
-        for(int i = 0 ; i < number.length ; i++){
-            while(num >= number[i]){
-                t += s[i] ;
-                num -= number[i] ;
-            }
-            if(num == 0){
-                break ;
-            }
-        }
-        return t;
-
-    }
-}
 

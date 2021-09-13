@@ -11,6 +11,11 @@ package suanfa;
  * @changeRecord
  */
 public class S19 {
+
+    /**
+     * 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
+     */
+
     public static void main(String[] args) {
         ListNode listNode = new ListNode(1);
         //ListNode listNode1 = new ListNode(2);
@@ -22,16 +27,10 @@ public class S19 {
         //listNode2.next = listNode3;
         //listNode3.next = listNode4;
 
-        SolutionS19 solutionS19 = new SolutionS19();
+        S19 solutionS19 = new S19();
         solutionS19.removeNthFromEnd(listNode, 1);
     }
-}
 
-/**
- * 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
- */
-
-class SolutionS19 {
     public ListNode removeNthFromEnd(ListNode head, int n) {
 
         ListNode pre = new ListNode(0);
@@ -54,3 +53,4 @@ class SolutionS19 {
         return pre.next;
     }
 }
+

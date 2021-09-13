@@ -68,7 +68,7 @@ public class S103 {
 
         treeNodes.offer(root);
 
-        var j = 0;
+        int j = 0;
         while (!treeNodes.isEmpty()) {
             LinkedList<Integer> newList = new LinkedList<>();
             int size = treeNodes.size();

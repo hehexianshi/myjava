@@ -16,36 +16,33 @@ import java.util.Stack;
  */
 public class S22 {
 
+    /**
+     * 数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。
+     *
+     *  
+     *
+     * 示例：
+     *
+     * 输入：n = 3
+     * 输出：[
+     *        "((()))",
+     *        "(()())",
+     *        "(())()",
+     *        "()(())",
+     *        "()()()"
+     *      ]
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/generate-parentheses
+     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     */
+
     public static void main(String[] args) {
-        SolutionS22 solutionS22 = new SolutionS22();
+        S22 solutionS22 = new S22();
         System.out.println(solutionS22.generateParenthesis(4));
 
     }
-}
 
-/**
- * 数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。
- *
- *  
- *
- * 示例：
- *
- * 输入：n = 3
- * 输出：[
- *        "((()))",
- *        "(()())",
- *        "(())()",
- *        "()(())",
- *        "()()()"
- *      ]
- *
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/generate-parentheses
- * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
-
-
-class SolutionS22 {
     List<String> ans = new ArrayList<>();
     public List<String> generateParenthesis(int n) {
         backtrack(0, 0, n, "");
@@ -71,3 +68,5 @@ class SolutionS22 {
 
     }
 }
+
+

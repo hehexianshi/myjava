@@ -12,15 +12,12 @@ package suanfa;
  */
 public class S14 {
     public static void main(String[] args) {
-        SolutionS14 solutionS14 = new SolutionS14();
+        S14 solutionS14 = new S14();
         String[] s = new String[]{"flower","flow","flight"};
         System.out.println(solutionS14.longestCommonPrefix(s));
 
     }
-}
 
-
-class SolutionS14 {
     public String longestCommonPrefix(String[] strs) {
         String s = "";
         if (strs.length == 0) {
@@ -42,7 +39,7 @@ class SolutionS14 {
 
         return s;
     }
-    
+
     private boolean check(char s, int index, String[] strs) {
         int length = strs.length;
 
@@ -59,6 +56,5 @@ class SolutionS14 {
 
         return true;
     }
-    
-    
+
 }

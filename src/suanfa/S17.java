@@ -14,14 +14,10 @@ import java.util.*;
  */
 public class S17 {
     public static void main(String[] args) {
-        SolutionS17 solutionS17 = new SolutionS17();
+        S17 solutionS17 = new S17();
         String s = "23";
         System.out.println(solutionS17.letterCombinations(s));
     }
-}
-
-class SolutionS17 {
-
 
     public List<String> letterCombinations(String digits) {
         Map<Integer, List<String>> s = new HashMap<>(16);
